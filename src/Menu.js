@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 function Menu(){
   const APP_ID = "a6127f3e";
@@ -15,7 +15,7 @@ function Menu(){
   };
   getRecipes();
   return(
-    <h1>Data Up</h1>
+    <h1>data up</h1>
   )
 }
 export default Menu;

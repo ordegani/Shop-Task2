@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import React from "react";
 import "./App.css";
 import Menu from "./Menu";
@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <NavBar>
           <Switch>
-            <Route path="/Home" component={Menu} />
-            {/* <Route exact path="/saved" component={Saved} /> */}
+            <Route exact path="/" component={Menu} />
+            <Route exact path="/saved" component={Saved} />
           </Switch>
         </NavBar>
       </BrowserRouter>
