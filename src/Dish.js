@@ -5,7 +5,7 @@ function Dish({title, image}) {
         <div className="container">
             
         <h1>{title}</h1>
-        <div className="dishImage">{image}</div>
+        <img className="dishhImage" src={image} alt="" />
         </div>
     )
 }

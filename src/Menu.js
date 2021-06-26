@@ -21,8 +21,8 @@ getDish();
       <div className="dishesContainer">
     {dishes.map((dish, index) => (<Dish
     key = {index}
-        title = {dish.title}
-        image = {dish.img}
+        title = {dish.recipe.label}
+        image = {dish.recipe.image}
         />))}
   </div>
     )
