@@ -1,21 +1,24 @@
 import React from "react";
+import {useState} from "react";
 
 function Menu(){
+
+    const [dish, setdish] = useState("");
+
   const APP_ID = "a6127f3e";
   const APP_KEY = "379b06961b2bac9e9f2a72ba27d63d80";
-  const getRecipes = async () => {
+  const getDish = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=cocktail&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=vegan&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = await response.json();
-    // setRecipes(data.hits);
-    // if (search.includes("cocktail")) {
-      console.log(data.hits);
-
+    setdish(data.hits);
+    // console.log(dish);
   };
-getRecipes();
+getDish();
   return(
     <h1>data up</h1>
+
   )
 }
 export default Menu;
