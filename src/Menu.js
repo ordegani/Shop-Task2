@@ -1,9 +1,10 @@
 import React from "react";
 import {useState} from "react";
+import Dish from "./Dish";
 
 function Menu(){
 
-    const [dish, setdish] = useState("");
+    const [dishes, setdishes] = useState([]);
 
   const APP_ID = "a6127f3e";
   const APP_KEY = "379b06961b2bac9e9f2a72ba27d63d80";
@@ -12,13 +13,18 @@ function Menu(){
       `https://api.edamam.com/search?q=vegan&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     const data = await response.json();
-    setdish(data.hits);
+    setdishes(data.hits);
     // console.log(dish);
   };
 getDish();
   return(
-    <h1>data up</h1>
-
-  )
+      <div className="dishesContainer">
+    {dishes.map((dish, index) => (<Dish
+    key = {index}
+        title = {dish.title}
+        image = {dish.img}
+        />))}
+  </div>
+    )
 }
 export default Menu;
