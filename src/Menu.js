@@ -13,7 +13,7 @@ function Menu(){
       console.log(data.hits);
 
   };
-  getRecipes();
+getRecipes();
   return(
     <h1>data up</h1>
   )

@@ -10,12 +10,11 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar>
+        <NavBar/>
           <Switch>
             <Route exact path="/" component={Menu} />
             <Route exact path="/saved" component={Saved} />
           </Switch>
-        </NavBar>
       </BrowserRouter>
     </div>
   );
