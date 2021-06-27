@@ -4,6 +4,7 @@ import "./App.css";
 import Menu from "./Menu";
 import Saved from "./Saved";
 import NavBar from "./NavBar";
+import NotFound from "./NotFound";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Menu} />
           <Route exact path="/saved" component={Saved} />
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
@@ -20,3 +22,4 @@ function App() {
 }
 
 export default App;
+
