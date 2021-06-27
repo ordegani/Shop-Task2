@@ -1,7 +1,13 @@
 import React from 'react'
+import Dish from "./Dish"
 
-export default function Saved() {
+export default function Saved({savedList}) {
+
     return (
-        <h1>Saved up</h1>
-    )
+        <div className="savedContainer">
+        {savedList.map((dish, index) => (
+          <Dish key={index} title={dish.label} image={dish.image} />
+          
+        ))}
+      </div>);
 }

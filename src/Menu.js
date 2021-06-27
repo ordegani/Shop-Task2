@@ -19,7 +19,7 @@ function Menu() {
   getDish();
 function save(saved){
   savedList.push(saved);
-  console.log(saved);
+  console.log(savedList);
 }
   return (
     <div className="dishesContainer">
