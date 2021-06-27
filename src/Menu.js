@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import Dish from "./Dish";
-import Saved from "./Saved";
+import ShowSaved from "./ShowSaved";
 
-function Menu() {
+function Menu({onSave}) {
   const [dishes, setdishes] = useState([]);
-  const savedList=[];
+  // const savedList=[];
 
   const APP_ID = "a6127f3e";
   const APP_KEY = "379b06961b2bac9e9f2a72ba27d63d80";
@@ -18,18 +18,21 @@ function Menu() {
     // console.log(dish);
   };
   getDish();
-function save(saved){
-  savedList.push(saved);
-  console.log(savedList);
-}
+
+  const save = (dish)=>{
+    onSave(dish);
+  }
   return (
     <div className="dishesContainer">
       {dishes.map((dish, index) => (
-        <Dish key={index} title={dish.recipe.label} image={dish.recipe.image} 
-        onClick={save}/>
-        
+        <Dish 
+          key={index}
+          title={dish.recipe.label} image={dish.recipe.image} 
+          onClick={() => save(dish)}
+        />
       ))}
     </div>
+    
   );
 }
 export default Menu;

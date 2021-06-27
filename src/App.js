@@ -1,19 +1,30 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Menu from "./Menu";
-import Saved from "./Saved";
+import Saved from "./ShowSaved";
 import NavBar from "./NavBar";
 import NotFound from "./NotFound";
+import ShowSaved from "./ShowSaved";
 
 function App() {
+  const [saved, setSaved] = useState([]);
+
+  function save(dish) {
+    setSaved([...saved, dish]);
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={Menu} />
-          <Route exact path="/saved" component={Saved} />
+          <Route exact path="/">
+            <Menu onSave={save} />
+          </Route>
+          <Route exact path="/saved">
+            <ShowSaved saved={saved} />
+          </Route>
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
@@ -22,4 +33,3 @@ function App() {
 }
 
 export default App;
-
