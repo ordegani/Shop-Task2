@@ -4,6 +4,7 @@ import Dish from "./Dish";
 
 function Menu() {
   const [dishes, setdishes] = useState([]);
+  const savedList=[];
 
   const APP_ID = "a6127f3e";
   const APP_KEY = "379b06961b2bac9e9f2a72ba27d63d80";
@@ -16,10 +17,16 @@ function Menu() {
     // console.log(dish);
   };
   getDish();
+function save(saved){
+  savedList.push(saved);
+  console.log(saved);
+}
   return (
     <div className="dishesContainer">
       {dishes.map((dish, index) => (
-        <Dish key={index} title={dish.recipe.label} image={dish.recipe.image} />
+        <Dish key={index} title={dish.recipe.label} image={dish.recipe.image} 
+        onClick={save}/>
+        
       ))}
     </div>
   );
