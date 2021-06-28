@@ -23,7 +23,7 @@ function Menu({ onSave }) {
     onSave(dish);
   };
   return (
-    <div className="dishesContainer">
+    <div className="dishContainer">
       {dishes.map((dish, index) => (
         <Dish
           key={index}
