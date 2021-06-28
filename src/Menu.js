@@ -3,7 +3,7 @@ import { useState } from "react";
 import Dish from "./Dish";
 import ShowSaved from "./ShowSaved";
 
-function Menu({onSave}) {
+function Menu({ onSave }) {
   const [dishes, setdishes] = useState([]);
   // const savedList=[];
 
@@ -19,20 +19,20 @@ function Menu({onSave}) {
   };
   getDish();
 
-  const save = (dish)=>{
+  const save = (dish) => {
     onSave(dish);
-  }
+  };
   return (
     <div className="dishesContainer">
       {dishes.map((dish, index) => (
-        <Dish 
+        <Dish
           key={index}
-          title={dish.recipe.label} image={dish.recipe.image} 
+          title={dish.recipe.label}
+          image={dish.recipe.image}
           onClick={() => save(dish)}
         />
       ))}
     </div>
-    
   );
 }
 export default Menu;
